@@ -1,0 +1,23 @@
+.container{
+  .header{
+    border-radius: 0 0 19px 19px;
+    margin-top: 0%;
+    background-color: #3e8ba8;
+    height: 4%;
+    .header-wrapper{
+      text-align: center;
+      h3{
+        margin: 0px 0px 0px 115px;
+        padding: 1%;
+        color: #fff;
+        font-weight: 800;
+        display: inline-block;
+      }
+      span{
+        float: right;
+        color: #fff;
+        padding: 15px 15px 0 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<div class="stats">
+  <div class="stats-wrapper">
+    <div *ngFor="let todoStat of todosStats" class="stats"  (click)="getTodoForDate(todoStat.date)">
+      <div class="stats-header stats-content" [style.background-color]="todoStat.date==currentDay?'#642462':'#3e8ba8'">{{todoStat.date}}</div>
+      <div class="stats-footer">
+        <div class="stats-total stats-fcontent">
+          All Tasks: {{todoStat.totalTodo}}
+        </div>
+        <div class="stats-completed  stats-fcontent">Completed: {{todoStat.totalCompted}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="todos-wrapper">
+  <div class="todo-wrapper">
+    <form #todoForm (submit)="addTodoForToday($event, todoForm,  newTodo.value)">
+      <input type="text" placeholder="Add new todo" #newTodo>
+    </form>
+    <div class="notemplate-wrapper" *ngIf="todayTodo == undefined || todayTodo.length == 0">
+      <h3>You don't have a Todo for today!!!</h3>
+    </div>
+    <ng-container *ngIf="todayTodo && todayTodo.length > 0";>
+      <div class="todo" *ngFor="let todo of todayTodo">
+        <span class="todo-ele" [style.color]="todo.isCompleted?'green':'black'" [style.text-decoration]="todo.isCompleted?'line-through':'none'">{{todo.todo}}</span>
+        <span class="btn-wrapper">
+          <span class="label label-success" *ngIf="!todo.isCompleted" (click)=updateCompletedOnCurrentDay(todo.todo,todo.$key,true)>done</span>
+          <span class="label label-success" *ngIf="todo.isCompleted" (click)=updateCompletedOnCurrentDay(todo.todo,todo.$key,false)>undo-done</span>
+          <span class="label label-danger" (click) = removeTodoFromCurrentDay(todo.$key)>delete</span>
+        </span>
+      </div>
+    </ng-container>
+  </div>
+</div>
+

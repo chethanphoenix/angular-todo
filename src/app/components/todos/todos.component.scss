@@ -1,0 +1,83 @@
+.todos-wrapper{
+  margin: 0 auto;
+  width: 60%;
+  .todo-wrapper{
+    form{
+      margin: 5%;
+      input{
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        padding: 1.5% 0 1.5% 11%;
+        border: 1px solid #efefef;
+      }
+      input:focus{
+        box-shadow: 0 0 4px 1px #afafaf;
+      }
+    }
+    .notemplate-wrapper {
+      h3{
+        text-align: center;
+        color: red;
+        user-select: none;
+        font-weight: 700;
+      }
+    }
+    .todo{
+      background-color: #efefef;
+      border-radius: 5px;
+      border: 1px solid #dedede;
+      margin: 5%;
+      padding: 1% 0 1% 10%;
+      .btn-wrapper{
+        float: right;
+        margin: 0 10px 0;
+        span{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/*Stats part*/
+
+.stats{
+  .stats-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    cursor: pointer;
+
+    .stats{
+      width: 15%;
+      border-radius: 3px;
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+      height: 150px;
+      margin: 80px 0 0 0;
+      &:hover{
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.3);
+      }
+      .stats-content{
+        padding: 2px;
+      }
+      .stats-header{
+        background-color: #42748b;
+        font-weight: 700;
+        color: #efefef;
+        padding: 10px;
+      }
+
+      .stats-footer{
+        margin: 20px 0 0 0;
+        .stats-fcontent{
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
+
+
+
